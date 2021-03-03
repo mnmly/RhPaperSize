@@ -74,13 +74,14 @@ namespace MNML
 
                 if (get_rc == Rhino.Input.GetResult.Point)
                 {
-                    var plane = Plane.WorldXY;
+                    var plane = doc.Views.ActiveView.ActiveViewport.GetConstructionPlane().Plane;
                     plane.Origin = gp.Point();
                     var item = listValues[listIndex];
                     var isPortrait = boolOption.CurrentValue;
                     var rect = new Rectangle3d(Plane.WorldXY, isPortrait ? item.X : item.Y, isPortrait ? item.Y : item.X);
                     var attr = new Rhino.DocObjects.ObjectAttributes();
                     attr.Name = listNames[listIndex];
+                    attr.LayerIndex = doc.Layers.CurrentLayerIndex;
                     doc.Objects.AddRectangle(rect, attr);
                     doc.Views.Redraw();
                 }
