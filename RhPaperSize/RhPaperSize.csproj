@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <Version>1.0</Version>
+    <Title>RhPaperSize</Title>
+    <Description>Description of RhPaperSize</Description>
+    <RhinoMacLauncher>/Applications/Rhino 7.app</RhinoMacLauncher>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="RhinoCommon" Version="7.0.19197.10155-wip" IncludeAssets="compile;build" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="common_paper_sizes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
