@@ -78,7 +78,7 @@ namespace MNML
                     plane.Origin = gp.Point();
                     var item = listValues[listIndex];
                     var isPortrait = boolOption.CurrentValue;
-                    var rect = new Rectangle3d(Plane.WorldXY, isPortrait ? item.X : item.Y, isPortrait ? item.Y : item.X);
+                    var rect = new Rectangle3d(plane, isPortrait ? item.X : item.Y, isPortrait ? item.Y : item.X);
                     var attr = new Rhino.DocObjects.ObjectAttributes();
                     attr.Name = listNames[listIndex];
                     attr.LayerIndex = doc.Layers.CurrentLayerIndex;
